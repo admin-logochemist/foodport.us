@@ -1,0 +1,47 @@
+.fstcon{
+    margin-top: 70px;
+    border: solid 2px black;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    text-align: center;
+    padding-top: 30px;
+    background-color: #5f030e;
+}
+.bckimg{
+    height: 700px;
+    width: 100%;
+   
+}
+.acntpg{
+    font-size: 3vw;
+    font-weight: 600;
+    color: rgb(17, 16, 16);
+    
+}
+.logimgs{
+    height: 100px;
+    width: 35%;
+}
+.totex{
+    font-size: 2vw;
+    font-weight: 600;
+   
+}
+.fstconso{
+    margin-top: 100px;
+    background-color: rgb(166, 22, 22);
+    border: solid 0.5vw rgb(9, 0, 0);
+    border-radius: 20px;
+    display: inline-block;
+    align-items: center;
+    
+   
+}
+.fusro{
+    display: flex;
+    justify-content: space-evenly;
+}
+.totexs{
+    font-size: 1vw;
+}

@@ -48,6 +48,7 @@ if(usersName!=="logged Out"){
                 <li  onClick={signOut}><a>{((usersName!==null)&&(usersName!=="Login")) ? "LOGOUT" : (usersName==="Login") ? "LOGIN" : "LOGIN"}</a></li>
                 {/* <Link href="/ressearch"><li><a>Re Search</a></li></Link> */}
                 <Link href="/about"><li><a>About Us</a></li></Link>
+                <Link href="/Accounts"><li><a>Accounts</a></li></Link>
                 <Link href="/register"><li><a className={navstyle.foodport_partner}>BECOME A PARTNER</a></li></Link>
                 <Link href="/basket_item"><li><a><i className="fas fa-shopping-cart"></i>{items.length}</a></li></Link>
                 <li className={navstyle.header_user_icon}> {`${usersName}`}</li>
