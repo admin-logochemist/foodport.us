@@ -10,7 +10,8 @@ import { useRouter } from 'next/router';
 import { login, logout, } from '.././components/features/UserSlice';
 import { onAuthStateChanged, signInWithEmailAndPassword, getAuth } from 'firebase/auth';
 import { route } from 'next/dist/server/router';
-import { app,db } from '../firebase';
+import { db } from '../firebase';
+
 import { updateDoc, collection, onSnapshot, orderBy, query, doc, getDocs, where, getDoc, addDoc, deleteDoc } from 'firebase/firestore'
 function AdvertSignin() {
   const [email, setEmail] = useState("")
@@ -18,7 +19,7 @@ function AdvertSignin() {
   const dispatch = useDispatch();
   const [error, setError] = useState("");
   const router = useRouter();
-
+  const auth = getAuth();
   var data = [];
   // const auth = getAuth(app);
   // useEffect(async () => {
@@ -68,13 +69,14 @@ function AdvertSignin() {
   //     }
 
   // }
-// const fetchingData = async () => {
- 
-// }
-// fetchingData();
+  // const fetchingData = async () => {
 
-  const logintoApp =  async  (e) => {
+  // }
+  // fetchingData();
+
+  const logintoApp = async (e) => {
     e.preventDefault()
+
     const querySnapshot = await getDocs(collection(db, "userid"), where("select", "==", "admin"));
     querySnapshot.forEach((doc) => {
       // doc.data() is never undefined for query doc snapshots
@@ -82,27 +84,31 @@ function AdvertSignin() {
       data.push({ id: doc.id, ...doc.data() })
       // setUserData(userData=>[...userData,doc.data()])
     })
-    try{
-    const filterData =  data.filter((item) => item.select === "advertizer" && item.email === email && item.password === password)
-    if (filterData) {
-      if((filterData.length>0) && (filterData[0].select === "advertizer")&&(filterData[0].email === email)&&(filterData[0].password === password) )
-      {
-         localStorage.setItem('email', filterData[0].email);
-        localStorage.setItem('accid', filterData[0].accId);
-         localStorage.setItem('displayName', filterData[0].name);
-       router.push('/AdvertOwner')
-  
+    try {
+      const filterData = data.filter((item) => item.select === "advertizer" && item.email === email && item.password === password)
+      if (filterData) {
+        if ((filterData.length > 0) && (filterData[0].select === "advertizer") && (filterData[0].email === email) && (filterData[0].password === password)) {
+          const user = localStorage.setItem('email', filterData[0].email);
+          localStorage.setItem('accid', filterData[0].accId);
+          localStorage.setItem('displayName', filterData[0].name);
+          dispatch(login({
+            email: filterData[0].email,
+            //  uid: userAuth.user.uid,
+            // displayName: userAuth.user.displayName,  
+          }))
+          router.push('/AdvertOwner')
+
         }
-        else{
+        else {
           setError('Wrong Email or Password') // if email or password is wrong
         }
 
-    }
+      }
 
-  }
- catch(e){
-   console.log(e)
- }
+    }
+    catch (e) {
+      console.log(e)
+    }
   }
   return (
     <>
