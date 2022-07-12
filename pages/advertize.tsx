@@ -61,7 +61,7 @@ function advertize() {
                                         <PhoneOutlined style={{color:"red"}} />       +1 530 635 5554
                                         </span>
                                   </div>
-                                  { showModal && <div   onClick={()=>setShowModal(true)}   className={style.modal} >
+                                  { showModal && <div   onClick={()=>setShowModal(true)}    className={style.modal} >
                     <div className={style.heading}>
                     </div>
 
@@ -69,7 +69,7 @@ function advertize() {
                         <div className="form-group" id={style.formgroup} >
                         <label><IdcardFilled className={style.anticon} />  &nbsp;&nbsp; Name</label><br />
                           <input  type="text" name='name'/><br />
-                          <label> <PhoneOutlined className={style.anticon}/> &nbsp;&nbsp; Phone</label> <br />
+                          <label> <PhoneOutlined rotate={90} className={style.anticon}/> &nbsp;&nbsp; Phone</label> <br />
                           <input type="text" name='number' /><br />
                           <label >  < MailOutlined className={style.anticon}/> &nbsp;&nbsp; Email</label><br />
                           <input type="text" placeholder="&nbsp; name@example.com" name='email' />
@@ -121,7 +121,7 @@ function advertize() {
                         <div className="form-group" id={style.formgroup} >
                         <label><IdcardFilled className={style.anticon} />  &nbsp;&nbsp; Name</label><br />
                           <input  type="text" name='name'/><br />
-                    <label><PhoneOutlined className={style.anticon}/> &nbsp;&nbsp;   Phone</label> <br />
+                    <label><PhoneOutlined rotate={90} className={style.anticon}/> &nbsp;&nbsp;   Phone</label> <br />
                           <input type="text" name='number' /><br />
                     <label>< MailOutlined className={style.anticon}/> &nbsp;&nbsp;  Email</label><br />
                           <input type="text" placeholder="&nbsp; name@example.com" name='email' />
