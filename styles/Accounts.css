@@ -16,7 +16,7 @@
 .acntpg{
     font-size: 3vw;
     font-weight: 600;
-    color: rgb(17, 16, 16);
+    color: rgb(255, 255, 255);
     
 }
 .logimgs{
@@ -41,6 +41,8 @@
 .fusro{
     display: flex;
     justify-content: space-evenly;
+    color: aliceblue;
+    margin-top: 20px !important;
 }
 .totexs{
     font-size: 1vw;

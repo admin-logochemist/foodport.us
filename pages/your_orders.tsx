@@ -109,7 +109,7 @@ function Your_orders() {
         </div>
 
        
-      <Footer />
+      {/* <Footer /> */}
       </main>
       </>
   );

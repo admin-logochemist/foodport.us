@@ -74,7 +74,7 @@ export default function Userorders({orders}) {
             
                 <div className="row">
                     <div className="col-md-2"></div>
-                    <div className="col-md-12 col-lg-8 col-sm-12"   id={styles.orders}>
+                    <div className="col-md-12 col-lg-8 col-sm-12" id={styles.orders}>
                     <h3>{orders && orders?.length} Orders</h3>
                         <div className={styles.orders_span}></div>
                       

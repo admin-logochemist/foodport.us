@@ -52,7 +52,7 @@ function User_profile() {
                 </div>
             </div>
         </div>
-            <Footer />
+            {/* <Footer /> */}
         </main>
   </>
   );
