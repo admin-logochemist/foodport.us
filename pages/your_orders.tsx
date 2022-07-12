@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Footer from './Footer';
 import Header from './Header';
 import Sidebar from './user_sidebar';
-function your_orders() {
+function Your_orders() {
   return(
       <>
         <Head>
@@ -17,7 +17,7 @@ function your_orders() {
 
         <main>
         <Header />
-        <Sidebar />
+        {/*<Sidebar />*/}  
 
         <div className="container">
             <div className="row justify-content-center mt-5">
@@ -115,4 +115,4 @@ function your_orders() {
   );
 }
 
-export default your_orders;
+export default Your_orders;
