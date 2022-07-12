@@ -22,7 +22,7 @@ import { db, storage } from '../firebase';
 import axios from 'axios';
 import YelpTabs from '../pages/YelpTabs';
 import Advers from '../public/img/download.43bfb366.png';
-import Zimimg from '../_static/img/scrcap.png';
+
 import {
     geocodeByAddress,
     geocodeByPlaceId,
@@ -241,8 +241,8 @@ function ressearch() {
                             <span className='all_demo'>All Results</span>
                         </div>
                         <div className='col-lg-2 col-md-12 box_shadow'>
-                        <h1>Alpha1</h1>
-                        <img src='../_static/img/scrcap.png' alt="Alpha1"/>
+                       
+                        <img className='bckimg' src="img/scrcap.png" alt="food port"/>
                         </div>
                          <div className='col-lg-0 col-md-0'>
                             <div className="res_box_locat_map">
