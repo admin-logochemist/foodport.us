@@ -13,7 +13,7 @@ body{
 .serviceBox:before,
 .serviceBox:after{
     content: "";
-    background: #ff0000;
+    background: #d6071b;
     width: 150px;
     height: 10px;
     transform: translateX(-50%);
@@ -41,7 +41,7 @@ body{
 
 .serviceBox .service-content:before{
     content: "";
-    background: #ff0000;
+    background:#d6071b;
     width: 128px;
     height: 100px;
     transform: translateX(-50%);
@@ -80,7 +80,7 @@ body{
 }
 
 .serviceBox .title{
-    color: #ff0000;
+    color: #d6071b;
     font-size: 20px;
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -94,19 +94,19 @@ body{
     margin: 0;
 }
 
-.serviceBox.green:before{ background: #ff0000; }
+.serviceBox.green:before{ background: #d6071b; }
 .serviceBox.green:after,
 .serviceBox.green .service-content:before{
-    background: #ff0000;
+    background: #d6071b;
 }
-.serviceBox.green .title{ color: #ff0000; }
+.serviceBox.green .title{ color: #d6071b; }
 
-.serviceBox.blue:before{ background: #ff0000; }
+.serviceBox.blue:before{ background: #d6071b; }
 .serviceBox.blue:after,
 .serviceBox.blue .service-content:before{
-    background: #ff0000;
+    background: #d6071b;
 }
-.serviceBox.blue .title{ color: #ff0000; }
+.serviceBox.blue .title{ color: #d6071b; }
 
 @media only screen and (max-width:992px){
     .serviceBox{ margin: 30px 0; }
@@ -198,12 +198,15 @@ body{
     content: '';
     height: 208px;
     width: 100%;
-    background-color: #ff0000a1;
+    background-color: #d6071b;
     border-radius: 0 0 200px 200px;
     position: absolute;
     left: 0;
     top: 0;
     z-index: -1;
+}
+.red{
+    color: #d6071b;
 }
 
 .user_profile .user_details{
@@ -245,7 +248,9 @@ body{
     line-height: 37px;
     font-weight: 300;
     margin-bottom: 4px;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
+    text-align: left;
+    margin-top: 16px;
 }
 .user_profile .profile-content li span{
     color: #ff0000a1;
@@ -302,8 +307,8 @@ body{
   }
   #option-1:checked:checked ~ .option-1,
   #option-2:checked:checked ~ .option-2 {
-    border-color: #ff0000a1;
-    background: #ff0000a1;
+    border-color: #d6071b;
+    background: #d6071b;
   }
   #option-1:checked:checked ~ .option-1 .dot,
   #option-2:checked:checked ~ .option-2 .dot {

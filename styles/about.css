@@ -32,3 +32,21 @@
 .about-content li{
     list-style: none;
 }
+.gthkf{
+    color: red;
+}
+.conbo{
+    /* border: dashed 3px red; */
+    box-shadow: inset 16px 13px 15px #8c4d4d74;
+    margin-top: 30px;
+    text-align: center;
+    font-weight: 600;
+    padding: 40px;
+    border: 1px solid lightgrey;
+
+}
+.zeposs{
+    color: rgb(225, 130, 14);
+    font-weight: 800;
+    font-size: 25px;
+}
