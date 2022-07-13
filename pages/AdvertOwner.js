@@ -194,7 +194,7 @@ return (
               <h5>
                 Welcome to Dashboard
                 <br />
-                <span> Your Name :{`${usersName}`}</span>
+                <span  className={`${DCss.heddsah}`}> Your Name :{`${usersName}`}</span>
               </h5>
             </div>
             <div className={`${DCss.dash_head_width}`}>
@@ -238,20 +238,21 @@ return (
               </h3>
               {/* <canvas id={`${DCss.c}`}></canvas> */}
               {advertData && advertData.map((item, index) => (
-                <div key={index}>
-                  <p>Name:{item.name}</p>
+                <div className={`${DCss.carse}`} key={index}>
+                  <p className={`${DCss.ttxsl}`}>Name:{item.name}</p>
 
-                  <p>Email:{item.email}</p>
-                  <p>Package{item.package}</p>
+                  <p className={`${DCss.ttxsl}`}>Email:{item.email}</p>
+                  <p className={`${DCss.ttxsl}`}>Package{item.package}</p>
                   <a href={item.image}>Image</a>
                 </div>
               ))}
               <input type="file" name="file" onChange={addInagetoPost} />
-              <button onClick={firebaseUpdate}>Submit</button>
+              <button className={`${DCss.bnzo}`} onClick={firebaseUpdate}>Submit</button>
             </div>
           </div>
-<div>
-{advertData && <img src={ advertData[0].image} />}
+
+          <div className={`${DCss.adverso}`}>
+{advertData && <img className={`${DCss.adversoimg}`} src={ advertData[0].image} />}
 </div>
           {/* <!-- CARDS SECTION --> */}
 
