@@ -18,7 +18,6 @@ function Main_login() {
         {/* d-flex justify-content-center */}
           <div className="container-fluid">
             <div className="row justify-content-center">
-
               <div className="col-lg-3 m-auto">
 
                 <div className={m_style.main_login_box}>
@@ -30,9 +29,23 @@ function Main_login() {
                   </div>
 
                   <div className={m_style.main_btn_box}>
+                  
                     <Link href="/UserSignin"><button className={m_style.user_login}>Login As User</button></Link>
+                  
+                
                    <Link href="/ResownerSignin"><button className={m_style.owner_login}>Login As Restaurant Owner</button></Link>
+                 
+
+                   
                    <Link href="/AdvertSignin"><button className={m_style.owner_login}>Login As Advertizer</button></Link>
+                   
+                  
+                   
+                  </div>
+                  <div className={m_style.main_btn_box1}>
+
+                  <Link href="/"><button className={m_style.owner_login}>Back Home&nbsp;<i className="fas fa-solid fa-arrow-right"></i></button></Link>
+
 
                   </div>
 
