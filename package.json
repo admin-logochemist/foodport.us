@@ -44,6 +44,7 @@
     "react-places-autocomplete": "^7.3.0",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
+    "react-stars": "^2.2.5",
     "reactstrap": "^9.0.1",
     "redux": "^4.1.2",
     "serverless-mysql": "^1.5.4",
