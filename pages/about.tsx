@@ -24,15 +24,15 @@ function about() {
 
 
                 </div>
-                <div className='container'>
+                <div className='container conbo'>
                     <br />
                     <br />
-                    <h4><b>Get To Know foodport</b></h4>
-                    <h6>Order food and grocery online with the foodport app</h6>
+                    <h4 className='gthkf'><b>Get To Know foodport</b></h4>
+                    <h6 className='zeposs'>Order food and grocery online with the foodport app</h6>
                     <p>Even when on the move, the free foodport mobile application for iOS, Android and Windows Phone, allows you to order food and groceries online anytime from anywhere. Whichever food you currently desire, we have the largest selection of restaurants for you to choose from, right here on foodport!	 <br />
                     <br /> In three words, the process of ordering food & grocery online is simple, fast, and convenient. </p>
                     <br />
-                    <h4> <b>How to Order</b></h4>
+                    <h4 className='gthkf'> <b>How to Order</b></h4>
                     <p>To order food delivery in United States, follow these simple steps:</p>
                     <ol>
                         

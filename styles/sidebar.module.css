@@ -43,7 +43,7 @@
     transition: all 0.3s ease;
   }
   .scd_navlinks li a:hover{
-    color: #0a75cf;
+    color: #d6071b;
   }
   .scd_navlinks .scd_mobile-item{
     display: none;
@@ -130,7 +130,7 @@
         transition: all 0.3s ease;
       }
       .scd_wrapper li a i{
-        color: #0a75cf;
+        color: #d6071b;
         font-size: 17px;
         padding: 0 10px;
         border-right: 1px solid gray;

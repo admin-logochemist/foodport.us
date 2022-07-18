@@ -252,7 +252,7 @@ return (
           </div>
 
           <div className={`${DCss.adverso}`}>
-{advertData && <img className={`${DCss.adversoimg}`} src={ advertData[0].image} />}
+{advertData && <img className={`${DCss.adversoimg}`} src={ advertData[0].image}/>}
 </div>
           {/* <!-- CARDS SECTION --> */}
 

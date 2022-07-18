@@ -4,13 +4,14 @@
   overflow-x: clip;
 }
 .homepage_banner{
-  background-image: url(/img/screencapture-localhost-3000-2022-01-15-00_41_04.png);
+  background-image: url(/img/Recetas-tradicionales-de-Estados-Unidos.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   height: 80vh;
   display: flex;
   justify-content: center;
+  box-shadow:inset 0 0 0 2000px rgba(32, 1, 19, 0.3);
 }
 #own_container{
   display: flex;
@@ -113,12 +114,12 @@ input.location-search-input::placeholder {
 }
 .search_input button {
   display: inline-flex;
-  padding: 10px 43px;
+  padding: 10px 64px;
   border: none;
   border-radius: 0 6px 6px 0;
   background-color: red;
   color: white;
-  font-weight: 600;
+  font-weight: 800;
 }
 .search_input button > .fa-search{
    
@@ -231,10 +232,11 @@ input.location-search-input::placeholder {
   margin: 0 auto;
 }
 .testimonilas_section .testi_box {
-  background: #fff;
+  background: rgba(196, 188, 188, 0.598);
   padding: 20px 31px;
   text-align: center;
   border-radius: 16px;
+  border: dashed #e90909 5px;
 }
 .testi_box .customer_name,.cus_descrip,.testi_info{
   display: block;
@@ -242,7 +244,7 @@ input.location-search-input::placeholder {
 .testi_box .customer_name{
   font-weight: 700;
   color: black;
-  font-size: 20px;
+  font-size: 25px;
   margin-top: 10px;
 }
 .color_red{
@@ -254,7 +256,7 @@ input.location-search-input::placeholder {
   font-weight: 500;
 }
 .testi_text{
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 400;
   color: black;
   line-height: 27px;

@@ -127,7 +127,7 @@ export default function Home() {
                 </div>
                 <ul>
                   <Link href="/ressearch"><li><a><i className='fas fa-utensils'></i>Restaurants</a></li></Link>
-                  <Link href="/ressearch"><li><a><i className='fab fa-magento'></i>Home Services</a></li></Link>
+                  <Link href="/ressearch"><li><a><i className='fab fa-magento'></i>Food Cart</a></li></Link>
                 </ul>
               </div>
             </div>
@@ -136,7 +136,9 @@ export default function Home() {
 
         {/* TAB HEADING SETION */}
         <div className={styles.tabs_section}>
+       
           <div className={styles.tabs_head_box}>
+          <a><i className="fas fa-hamburger"></i></a>
             <span className={styles.tabs_head}>Discover The <span className={styles.red_color}>Best Food In Town</span></span>
            
           </div>
@@ -147,7 +149,7 @@ export default function Home() {
           
         </div>
         <div className="container" id={styles.Showmorebtn}>
-        <a href="/ressearch"><button>Show more</button></a>
+        <a href="/ressearch"><button><i class='fas fa-bacon'></i>Show more</button></a>
         </div>
         {/* TESTIMONIALS SECTION */}
         <div className={styles.testimonilas_section}>
