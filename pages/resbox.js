@@ -13,7 +13,6 @@ import { selectOpenResturant } from '.././components/features/ResSlice';
 import SimpleMap from './simpleMap';
 import ReactStars from 'react-stars'
 import { GoogleApiWrapper, Map } from 'google-maps-react';
-import data from './data.json';
 import { Rate } from 'antd';
 import DCss from "../styles/dashboard.module.css";
 import Question from './Question'
