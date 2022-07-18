@@ -10,24 +10,65 @@ import resstyle from '../styles/resbox.module.css';
 import { useSelector } from 'react-redux';
 import { selectOpenResturant } from '.././components/features/ResSlice';
 import SimpleMap from './simpleMap';
-import { GoogleApiWrapper, Map } from 'google-maps-react';
+import { GoogleApiWrapper, Map } from 'google-maps-react'; 
 import data from './data.json';
+import ReactStars from 'react-stars'
 import { Rate } from 'antd';
 import Question from './Question'
 import ResFood from './ResFood'
-import { addDoc, collection, serverTimestamp, updateDoc,doc, onSnapshot, query,where } from 'firebase/firestore';
+import { getDocs,addDoc, collection, serverTimestamp, updateDoc,doc, onSnapshot, query,where } from 'firebase/firestore';
 import { db,storage } from '../firebase';
 import FoodItems from './FoodItems';
+import {amage} from '../public/img/a.jpg'
 import FoodList from './FoodList'
 function resbox() {
     const [ review,setReview ] = useState("");
     const [ question,setQuestion ] = useState("");
     const [food, setFood] = useState("");
+    const [rating, setRating] = useState(0);
+    const [resReviews, setResReviews] = useState();
+    const [userData, setUserData] = useState([])
+const datas=[]
+    useEffect(async () => {
+         
+        const Email = localStorage.getItem("email")
+        console.log(Email)
+        
+     
+
+    
+          // console.log(router.query.advertEmail)
+    if((Email!== undefined) && Email.length ){
+    
+        let advertize = collection(db, 'review');
+        let q = query(advertize,where('id','==',selectResturant?.id))
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          console.log(doc.id, " => ", doc.data(),"hello");
+          datas.push({ id: doc.id, ...doc.data() })
+  
+        }
+        ); 
+      
+      if (datas) {
+          console.log(datas,"data found")
+           setUserData(datas);
+       
+      }
+    }
+        
+    
+      
+      }, [])
     const handleSubmit = async (e) => {
        
         try {
         const docRef=  await addDoc(collection(db, 'review'), {
          review:review,
+         ratings:rating,
+         id:selectResturant.id
+
 
           })
        
@@ -36,6 +77,7 @@ function resbox() {
           alert(err)
         }
     }
+
     const handleSelect = async value => {
         const results = await geocodeByAddress(value)
         const ll = await getLatLng(results[0])
@@ -46,6 +88,7 @@ function resbox() {
     useEffect(() => {
       getQuestion();
       getFood();
+     
     }, [])
     const getFood = () => {
         onSnapshot(
@@ -56,6 +99,7 @@ function resbox() {
     )
     
       }
+   
   const getQuestion = () => {
     onSnapshot(
 query(collection(db,"Question")),  (snapshot)=>{setQuestion(snapshot.docs)
@@ -77,7 +121,7 @@ console.log(snapshot.docs);
   }
   const getResturants = () => {
     onSnapshot(
-      query(collection(db,"food"),  where("id", "==", selectResturant.id)), (snapshot)=>{setFood(snapshot.docs)
+      query(collection(db,"food"),  where("id", "==", selectResturant.id)), (snapshot)=>{setResReviews(snapshot.docs)
       console.log(snapshot.docs);
       })
   };
@@ -102,7 +146,7 @@ console.log(snapshot.docs);
       })
     }
   };
-  
+
     const selectResturant = useSelector(selectOpenResturant)
 
     return (
@@ -446,35 +490,74 @@ console.log(snapshot.docs);
                             </h6>
                      
                         </div>
-
                         <div className="row">
-                            <div className="col-lg-7 mt-5">
-                                <div className={resstyle.write_reviews_sec}>
-                                    <h5 className={resstyle.reviews_head}>Recommended Reviews</h5>
-                                    <br />
-                                    <div className={resstyle.reviews_sec_box}>
-                                        <img src="user-icon.png" alt="" />
-                                        <h5 className={resstyle.reviews_info}>User Name
-                                            <br />
-                                            <span className={resstyle.user_locate}>Location</span>
+                        <div className="col-lg-7 mt-5">
+                            <div className={resstyle.write_reviews_sec}>
+                                <h5 className={resstyle.reviews_head}>Recommended Reviews</h5>
+                                <br />
+                                <div className={resstyle.reviews_sec_box}>
+                                   
+
+                                    <div className={resstyle.ratingstar}>
+                                        <h5 className="">User Name
+
                                         </h5>
-                                        <div className={resstyle.ratingstar}>
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            <i className="fas fa-star"></i>
-                                            <br />
-                                            <button className={resstyle.re_btn}>Write a Review</button>
-                                        </div>
+                                        <ReactStars
+                                            count={5}
+                                            size={24}
+                                            onChange={(e) => setRating(e)}
+                                            color2={'#ffd700'} />
+                                        <textarea id="w3review" name="w3review" rows="3" cols="45" value={review} onChange={(e)=>setReview(e.target.value)}> ss </textarea>
+
+                                        <button className={resstyle.re_btn} onClick={handleSubmit}>Write a Review</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    
+                    </div>
                     </div>
                      )
                     })}
-            
+                    <div className="mr_top rows">
+                    <div className="customer_reviews_section">
+                      <h3 className="left_reviews_head_fir">
+                        Customer Reviews (580)
+                      </h3>
+                    
+                      <div className="top_scrolling">
+                        <div className="dash_review">
+                      {  userData?.map((item, index) => (
+                          <div key={index}
+                            className="top_cards_item customer_cards"
+                          >
+                          <img src="img/carlitos-barbecue-tacqueria-catering-scaled.jpg" alt="" height={50} />
+                            <h3 className="top_cards_title" >
+                              The Taco Cartel
+                              <br />
+                             
+                              <ReactStars
+                              count={5}
+                              size={24}
+                              value={item?.ratings}
+                              color2={'#ffd700'} />
+                              <p>
+                     {item.review}
+                            </p>
+                            </h3>
+                          
+                          </div>
+                         ))}
+                        </div>
+    
+                       
+                      </div>
+    
+                      <div className="v_all">
+                        <button>View All</button>
+                      </div>
+                    </div>
+                  </div>
 
                 </div>
             </div>

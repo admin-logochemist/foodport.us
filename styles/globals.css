@@ -51,6 +51,131 @@ svg {
   justify-content: center !important;
   flex-direction: column !important;
 }
+.mr_top {
+  margin-top: 30px;
+}
+
+.top_five_cards {
+  width: 45%;
+  border: 3px solid #b7b5b533;
+  margin: auto;
+  border-radius: 0 0 10px 10px;
+}
+
+.top_cards_item {
+  width: 95%;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px;
+  box-shadow: 1px 0px 5px #80808069;
+  background: #e3e3e31f;
+  border-bottom: 2px solid #80808059;
+  margin: 4px;
+  position: relative;
+  left: 2%;
+}
+.customer_reviews_section {
+  width: 80%;
+  display: block;
+  border: 3px solid #b7b5b533;
+  border-radius: 0 0 10px 10px;
+  background: #80808003;
+  box-shadow: inset 6px 3px 5px #80808024;
+}
+.left_reviews_head_fir {
+  background-color: #b50e0ed4;
+  font-size: 18px;
+  padding: 12px;
+  letter-spacing: 1px;
+  padding-left: 5px;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 700;
+}
+.top_scrolling {
+  height: 400px;
+  overflow-y: scroll;
+  display: block;
+  padding-top: 10px;
+  background: #ebebeb1f;
+}
+.top_scrolling::-webkit-scrollbar {
+  width: 7px;
+}
+.dash_review{
+  box-shadow: 1px 0px 5px #80808069;
+  background: #e3e3e31f;
+  border-bottom: 2px solid #80808059;
+  margin-top: 25px;
+}
+.dash_review .dast_re_text p{
+  padding-left: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.rating_stars{
+  position: relative;
+  
+}
+.rating_stars i {
+  color: #cbcb11;
+}
+.customer_reviews_section .customer_cards > img{
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 70px;
+  border: 2px solid #7e7d7d4d;
+  padding: 4px;
+}
+
+.top_scrolling::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 0, 0, 0.678);
+  background-image: -webkit-linear-gradient(90deg,rgba(255, 255, 255, .2) 25%,transparent 25%,transparent 50%,
+  rgba(255, 255, 255, .2) 50%,rgba(255, 255, 255, .2) 75%,transparent 75%,transparent);
+}
+
+.top_cards_item img {
+  height: 80px !important;
+  width: 120px !important;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.top_cards_title {
+  padding-left: 13px;
+  font-size: 17px;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 500;
+  line-height: 21px;
+}
+
+.top_cards_ddes {
+  font-size: 14px;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 500;
+}
+.v_all > button{
+  margin: 0 auto;
+  display: block;
+  border: navajowhite;
+  margin-top: 13px;
+  margin-bottom: 10px;
+  padding: 10px 44px;
+  outline: none !important;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 500;
+}
+.v_all > button:hover{
+  background-color: rgba(255, 0, 0, 0.678);
+  color: white;
+  transition: all 1s;
+  border: none;
+}
 #components-layout-demo-custom-trigger .trigger {
   padding: 0 24px;
   font-size: 18px;
