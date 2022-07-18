@@ -29,16 +29,22 @@ function resbox() {
     const [resReviews, setResReviews] = useState();
     const [userData, setUserData] = useState([])
 const datas=[]
+
+const [usersName, setUsersName ] = useState("");
+
     useEffect(async () => {
          
         const Email = localStorage.getItem("email")
         console.log(Email)
-        
+        // const Email = localStorage.getItem("name")
+        const users = localStorage.getItem('displayName')
+    console.log(users,"local storage")
+    setUsersName(((users!==null)&&(users!==undefined)) ? users : "Login")
      
 
     
           // console.log(router.query.advertEmail)
-    if((Email!== undefined) && Email.length ){
+
     
         let advertize = collection(db, 'review');
         let q = query(advertize,where('id','==',selectResturant?.id))
@@ -56,7 +62,7 @@ const datas=[]
            setUserData(datas);
        
       }
-    }
+    
         
     
       
@@ -66,6 +72,7 @@ const datas=[]
         try {
         const docRef=  await addDoc(collection(db, 'review'), {
          review:review,
+         usersName:usersName,
          ratings:rating,
          id:selectResturant.id
 
@@ -81,7 +88,7 @@ const datas=[]
     const handleSelect = async value => {
         const results = await geocodeByAddress(value)
         const ll = await getLatLng(results[0])
-        console.log("Abdul",ll);
+        console.log("Alpha1",ll);
 
     }
     
@@ -499,7 +506,7 @@ console.log(snapshot.docs);
                                    
 
                                     <div className={resstyle.ratingstar}>
-                                        <h5 className="">User Name
+                                        <h5 className="">{usersName}
 
                                         </h5>
                                         <ReactStars
@@ -519,46 +526,49 @@ console.log(snapshot.docs);
                     </div>
                      )
                     })}
-                    <div className="mr_top rows">
-                    <div className="customer_reviews_section">
-                      <h3 className="left_reviews_head_fir">
-                        Customer Reviews (580)
-                      </h3>
-                    
-                      <div className="top_scrolling">
-                        <div className="dash_review">
-                      {  userData?.map((item, index) => (
-                          <div key={index}
-                            className="top_cards_item customer_cards"
-                          >
-                          <img src="img/carlitos-barbecue-tacqueria-catering-scaled.jpg" alt="" height={50} />
-                            <h3 className="top_cards_title" >
-                              The Taco Cartel
-                              <br />
-                             
-                              <ReactStars
-                              count={5}
-                              size={24}
-                              value={item?.ratings}
-                              color2={'#ffd700'} />
-                              <p>
-                     {item.review}
-                            </p>
-                            </h3>
-                          
-                          </div>
-                         ))}
-                        </div>
-    
-                       
+                   
+
+                </div>
+                <div className='row'>
+                <div className="mr_top rows">
+                <div className="customer_reviews_section">
+                  <h3 className="left_reviews_head_fir">
+                    Customer Reviews (580)
+                  </h3>
+                
+                  <div className="top_scrolling">
+                    <div className="dash_review">
+                  {  userData?.map((item, index) => (
+                      <div key={index}
+                        className="top_cards_item customer_cards"
+                      >
+                      <img src="img/carlitos-barbecue-tacqueria-catering-scaled.jpg" alt="" height={50} />
+                        <h3 className="top_cards_title" >
+                          {item?.usersName}
+                          <br />
+                         
+                          <ReactStars
+                          count={5}
+                          size={24}
+                          value={item?.ratings}
+                          color2={'#ffd700'} />
+                          <p>
+                 {item.review}
+                        </p>
+                        </h3>
+                      
                       </div>
-    
-                      <div className="v_all">
-                        <button>View All</button>
-                      </div>
+                     ))}
                     </div>
+
+                   
                   </div>
 
+                  <div className="v_all">
+                    <button>View All</button>
+                  </div>
+                </div>
+              </div>
                 </div>
             </div>
             <Footer />
