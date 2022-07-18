@@ -27,30 +27,30 @@ function resbox() {
     const [question, setQuestion] = useState("");
     const [food, setFood] = useState("");
     const [rating, setRating] = useState(0);
-    const handleSubmit = async (e) => {
+//     const handleSubmit = async (e) => {
 
-        try {
+//         try {
 
 
-            // Set the "capital" field of the city 'DC'
-            if(selectResturant.data().select==="foodcart"){
-            await updateDoc(doc(db, "resturant",selectResturant?.id), {
-                review: review,
-                rating:rating,
-            });
-        }else{
-            await updateDoc(doc(db, "review",selectResturant?.id), {
-                review:review,
-                rating:rating,
-            });
+//             // Set the "capital" field of the city 'DC'
+//             if(selectResturant.data().select==="foodcart"){
+//             await updateDoc(doc(db, "resturant",selectResturant?.id), {
+//                 review: review,
+//                 rating:rating,
+//             });
+//         }else{
+//             await updateDoc(doc(db, "review",selectResturant?.id), {
+//                 review:review,
+//                 rating:rating,
+//             });
 
-        }
-            alert("Review submited")
+//         }
+//             alert("Review submited")
         
-    } catch (err) {
-        alert(err)
-    }
-}
+//     } catch (err) {
+//         alert(err)
+//     }
+// }
 const handleSelect = async value => {
     const results = await geocodeByAddress(value)
     const ll = await getLatLng(results[0])
@@ -493,46 +493,7 @@ return (
                                         </div>
                                     </div>
                                 </div>
-                                <div className={`${DCss.mr_top} ${DCss.rows}`} id={resstyle.review2}>
-                                <div className={`${DCss.customer_reviews_section}`}>
-                                  <h3 className={`${DCss.left_reviews_head_fir}`}>
-                                    Customer Reviews (580)
-                                  </h3>
-                
-                                  <div className={`${DCss.top_scrolling}`}>
-                                    <div className={`${DCss.dash_review}`}>
-                                      <div
-                                        className={`${DCss.top_cards_item} ${DCss.customer_cards}`}
-                                      >
-                                        <Image
-                                          src="/img/test.png"
-                                          alt=""
-                                          width={500}
-                                          height={500}
-                                        />
-                                        <h3 className={`${DCss.top_cards_title}`}>
-                                          The Taco Cartel
-                                          <br />
-                                          <span className={`${DCss.top_cards_ddes}`}>
-                                          </span>
-                                          <div className="rating_stars">
-                                           {selectResturant.data()?.rating}
-                                          </div>
-                                        </h3>
-                                      </div>
-                                      <div className={`${DCss.dast_re_text}`}>
-                                        <p>
-                                        {selectResturant.data()?.review}
-                                        </p>
-                                      </div>
-                                    </div>
-                                  </div>
-                
-                                  <div className={`${DCss.v_all}`}>
-                                    <button>View All</button>
-                                  </div>
-                                </div>
-                              </div>
+                            
                             </div>
                         </div>
                     )
